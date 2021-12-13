@@ -17,7 +17,6 @@ const SignUpPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const user = { email };
-    console.log(typeof email);
     if (email === "") {
       setError("Email adress should not be empty!");
       if (!email.split("").includes("@")) {
