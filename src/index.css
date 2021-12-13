@@ -7,11 +7,6 @@ body * {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-body {
-  /* background: #615ed2;
-  background: linear-gradient(171deg, #009fe0 0%, #4e3463 100%); */
-}
-
 .left-column {
   width: 40%;
   height: 300px;
@@ -27,21 +22,6 @@ body {
   top: 30px;
   bottom: 30px;
   left: 0;
-}
-
-.bottom-links {
-  position: absolute;
-  left: 40px;
-  right: 40px;
-  bottom: 20px;
-}
-.bottom-links > a {
-  color: #fff;
-}
-
-.main-title {
-  font-size: 60px;
-  line-height: 50px;
 }
 
 .right-column {

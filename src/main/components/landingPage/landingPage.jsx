@@ -4,8 +4,8 @@ import "./landingPage.scss";
 const LandingPage = () => {
   return (
     <div className='landing-page-container'>
-      <div class='left-column'></div>
-      <div class='right-column'>
+      <div className='left-column'></div>
+      <div className='right-column'>
         <Link className='form-row flex-row' to='/register'>
           <button type='submit'>Register with my email</button>
         </Link>
