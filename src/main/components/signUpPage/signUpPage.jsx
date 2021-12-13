@@ -9,6 +9,7 @@ const SignUpPage = () => {
   const [email, setEmail] = useState("");
   const [, setToken] = useLocalStorage("token");
   const [{ response, isLoading }, doFetch] = useFetch(apiUrl);
+  const [error, setError] = useState(true);
   const handleInput = (event) => {
     setEmail(event.target.value);
   };
@@ -16,19 +17,26 @@ const SignUpPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const user = { email };
-    doFetch({
-      method: "post",
-      data: { user },
-    });
+    console.log(typeof email);
+    if (email === "") {
+      setError("Email adress should not be empty!");
+      if (!email.split("").includes("@")) {
+        setError("Email adress should contain @ symbol!");
+      }
+    } else {
+      doFetch({
+        method: "post",
+        data: { user },
+      });
+    }
   };
-
   useEffect(() => {
     if (!response) {
       return;
     }
     setToken(email);
     setIsSuccessfullSumbit(true);
-  }, [response, setToken, email]);
+  }, [response, setToken, email, error]);
 
   if (isSuccessfullSubmit) {
     return <Navigate to='/home' />;
@@ -39,10 +47,12 @@ const SignUpPage = () => {
   }
 
   return (
-    <div className='signUp-page-container'>
-      {/* {error && <BackEndErrorMessages backEndErrors={error} />} */}
-      <div className='left-column'></div>
+    <div className='signUp-page container'>
+      <div className='top-column'>
+        <div className='top-image'></div>
+      </div>
       <div className='right-column'>
+        {error && <BackEndErrorMessages backEndErrors={error} />}
         <form className='form'>
           <div className='form-row'>
             <label for='email'>Email</label>
@@ -55,7 +65,7 @@ const SignUpPage = () => {
           </div>
           <div className='form-row flex-row'>
             <button onClick={handleSubmit} type='submit'>
-              Sign up
+              Create my account
             </button>
           </div>
         </form>

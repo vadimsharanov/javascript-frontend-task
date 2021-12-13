@@ -5,6 +5,7 @@ import AllRoutes from "./main/routes";
 const App = () => {
   return (
     <Router>
+      <div className='background'></div>
       <AllRoutes></AllRoutes>
     </Router>
   );

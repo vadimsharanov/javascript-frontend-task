@@ -1,23 +1,11 @@
 import React from "react";
+import "./backEndErrorMessages.scss";
 const BackEndErrorMessages = ({ backEndErrors }) => {
-  const messages = backEndErrors.errors;
+  const messages = backEndErrors;
   if (messages === undefined) {
     return <div></div>;
   }
   const keys = Object.keys(messages);
-  return (
-    <div>
-      {keys.map((item) => (
-        <ul key={item} style={{ fontSize: "24px" }}>
-          {item[0].toUpperCase() + item.slice(1)}
-          {messages[item].map((err) => (
-            <li key={err} style={{ fontSize: "18px" }}>
-              {err}
-            </li>
-          ))}
-        </ul>
-      ))}
-    </div>
-  );
+  return <div className='back-end-errors'>{backEndErrors}</div>;
 };
 export default BackEndErrorMessages;
