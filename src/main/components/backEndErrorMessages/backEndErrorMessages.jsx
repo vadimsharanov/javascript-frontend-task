@@ -1,6 +1,6 @@
 import React from "react";
 import "./backEndErrorMessages.scss";
-const BackEndErrorMessages = ({ backEndErrors }) => {
+const BackEndErrorMessages = ({ backEndErrors, doFetch }) => {
   const messages = backEndErrors;
   if (messages === undefined) {
     return <div></div>;

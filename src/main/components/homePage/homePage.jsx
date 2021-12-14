@@ -23,7 +23,7 @@ const HomePage = () => {
       <div className='top-column'>
         <div className='top-image'></div>
       </div>
-      <div className='right-column'>
+      <div className='bottom-column'>
         <div className='form-row flex-row'>
           <button onClick={logout}>Logout</button>
         </div>

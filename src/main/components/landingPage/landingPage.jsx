@@ -7,7 +7,7 @@ const LandingPage = () => {
       <div className='top-column'>
         <div className='top-image'></div>
       </div>
-      <div className='right-column'>
+      <div className='bottom-column'>
         <Link className='form-row flex-row' to='/register'>
           <button type='submit'>Register with my email</button>
         </Link>
