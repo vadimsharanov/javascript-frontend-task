@@ -4,6 +4,7 @@ import useLocalStorage from "../../hooks/useLocalStorage";
 import BackEndErrorMessages from "../backEndErrorMessages/backEndErrorMessages";
 import { Navigate } from "react-router";
 import { useForm } from "react-hook-form";
+import HomePage from "../homePage/homePage";
 const SignUpPage = () => {
   const {
     register,
@@ -38,16 +39,13 @@ const SignUpPage = () => {
     setToken(data.email);
     reset();
   };
-
+  console.log(response);
   return (
     <div className='signUp-page container'>
       <div className='top-column'>
         <div className='top-image'></div>
       </div>
       <div className='bottom-column'>
-        {error && (
-          <BackEndErrorMessages doFetch={doFetch} backEndErrors={error} />
-        )}
         <form onSubmit={handleSubmit(onSubmit)} className='form'>
           <div className='form-row'>
             <label for='email'>Email</label>
